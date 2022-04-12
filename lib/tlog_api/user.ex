@@ -14,6 +14,7 @@ defmodule TlogApi.User do
       timestamps()
     end
 
+    # Changeset + Data Validation
     def changeset(params) do
       %__MODULE__{}
       |> cast(params, @fields)
