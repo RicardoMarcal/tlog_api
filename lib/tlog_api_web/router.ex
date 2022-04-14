@@ -5,8 +5,11 @@ defmodule TlogApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", TlogApiWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/graphql", Absinthe.Plug, schema: TlogApiWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: TlogApiWeb.Schema
   end
 
   # Enables LiveDashboard only for development

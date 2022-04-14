@@ -2,4 +2,4 @@
 
 - Demo: unavailable
 
-- Technologies used: Elixir and Phoenix
+- Technologies used: Elixir, Phoenix and Absinthe (GraphQL)
