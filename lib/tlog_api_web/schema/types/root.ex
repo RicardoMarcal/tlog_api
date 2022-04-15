@@ -1,6 +1,7 @@
 defmodule TlogApiWeb.Schema.Types.Root do
   use Absinthe.Schema.Notation
 
+  alias Crudry.Middlewares.TranslateErrors
   alias TlogApiWeb.Resolvers.User, as: UserResolver
 
   import_types TlogApiWeb.Schema.Types.User
@@ -18,6 +19,7 @@ defmodule TlogApiWeb.Schema.Types.Root do
       arg :input, non_null(:create_user_input)
 
       resolve &UserResolver.create/2
+      middleware TranslateErrors
     end
   end
 end
